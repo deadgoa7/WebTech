@@ -17,10 +17,12 @@ public class ViewHouseForm {
 		HttpSession session = req.getSession(false);
 		int userId = (int) session.getAttribute("userId");
 		
-		if(requete == "Delete") {
+		if(requete.equalsIgnoreCase("Delete")) {
 			setRes(LogementsDatabase.deleteLogementById(id, userId));
-		} else if (requete == "Book") {
+		} else if (requete.equalsIgnoreCase("Book")) {
 			setRes(LogementsDatabase.bookLogement(id, userId));
+		} else {
+			setRes("Wrong request: " + requete);
 		}
 	}
 	

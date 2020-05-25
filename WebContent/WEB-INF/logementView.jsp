@@ -22,21 +22,27 @@
 			<div class="container">
 				<div class="row d-flex justify-content-center">
 					<c:if test="${!empty logement}">
-						<li><strong>Ville : </strong><c:out value="${logement.villeLogement}"></c:out></li>
-						<li><strong>Description : <br></strong><c:out value="${logement.adresseLogement}"></c:out></li>
-						<!-- <li><strong>Description : </strong><c:out value="${logement.descriptionLogement}"></c:out></li>  -->
-						<li><strong>Note : </strong><c:out value="${logement.rateLogement}"></c:out>/5</li>
-						<c:if test="${!empty sessionScope.nom}">
+						<c:out value="${logement.villeLogement}"></c:out>
+						<c:out value="${logement.adresseLogement}"></c:out>
+						<c:out value="${logement.descriptionLogement}"></c:out>
+						<c:out value="${logement.rateLogement}"></c:out>/5
+						<c:if test="${!empty sessionScope.CurrentUser}">
 							<form action="ViewLogement?id=<c:out value='${logement.idLogement}'/>" method="POST">
-								<input type="submit" value="Delete">
-								<input type="submit" value="Book">
+								<input type="submit" class="btn btn-danger" value="Delete">
+								<input type="hidden" name="requete" value="Delete">
+							</form>
+							<form action="ViewLogement?id=<c:out value='${logement.idLogement}'/>" method="POST">
+								<input type="submit" class="btn btn-primary" value="Book">
+								<input type="hidden" name="requete" value="Book">
 							</form>
 						</c:if>
-						<c:if test="${empty sessionScope.nom}">
+						<c:if test="${empty sessionScope.CurrentUser}">
 							<p> Veuillez vous connecter pour réserver ce logement ! </p>
 						</c:if>
 					</c:if>
-					<c:if test="${!empty form}"><c:out value="${form.res}"></c:out></c:if>
+					<c:if test="${!empty form.res}">
+						Test res form
+					<c:out value="${form.res}"></c:out></c:if>
 				</div>
 			</div>
 			
