@@ -4,7 +4,6 @@
         <title>Ajout d'un logement</title>
         <link type="text/css" rel="stylesheet" href="style/extrastyle.css" />
        	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">  
-    	<link rel="stylesheet" href="extrastyle.css">
     </head>
     <body>
     
@@ -19,39 +18,35 @@
 	    	</c:if>
 	    	
 	    	<c:if test="${!empty CurrentUser.prenomClient }">
-	    		<h1 class="d-flex justify-content-center mb-5 w-100">Ajout d'un logement !</h1>
+	    		<h1>Bonjour <c:out value="${sessionScope.CurrentUser.prenomClient}">, veuillez ajouter un logement dont vous êtes le propriétaire</c:out></h1>
 	    		
-	    		<div class="container">
-					<div class="row d-flex justify-content-center">
-			    		<form method="POST" action="AddHouse" class="w-75">
-							<div class="form-group">
-								<fieldset>
-									<legend>Informations logement</legend>
-									
-									<label for="address">Adresse du logement</label>
-									<input class="form-control" type="text" id="address" name="address" value="" size="20" maxlength="255" />
-									<br /> 
-									
-									<label for="city">Ville du logement</label>
-									<input class="form-control" type="text" id="city" name="city" value="" size="20" maxlength="255" />
-									<br /> 
-									
-									<label for="description">Description du logement</label>
-									<input class="form-control" type="text" id="description" name="description" value="" size="20" maxlength="255" />
-									<br /> 
-					
-								</fieldset>
-								<input type="submit" class="btn btn-primary" value="Valider" />
-								<input type="reset" class="btn btn-primary" value="Remettre à zéro" /> 
-								<br />
-							</div>
-						</form>
-					</div>
+	    		<form method="POST" action="AddHouse" class="w-75">
+				<div class="form-group">
+					<fieldset>
+						<legend>Informations logement</legend>
+						
+						<label for="address">Adresse du logement</label>
+						<input class="form-control" type="text" id="address" name="address" value="" size="20" maxlength="255" />
+						<br /> 
+						
+						<label for="city">Ville du logement</label>
+						<input class="form-control" type="text" id="city" name="city" value="" size="20" maxlength="255" />
+						<br /> 
+						
+						<label for="description">Description du logement</label>
+						<input class="form-control" type="text" id="description" name="description" value="" size="20" maxlength="255" />
+						<br /> 
+		
+					</fieldset>
+					<input type="submit" value="Valider" />
+					<input type="reset" value="Remettre à zéro" /> 
+					<br />
 				</div>
-			 </c:if>
-			    	
-		</div>
-			 
+			</form>
+	    	</c:if>
+	    	
+	    </div>
+
 
 </body>
 </html>

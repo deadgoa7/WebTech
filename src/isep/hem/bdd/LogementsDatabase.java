@@ -26,9 +26,7 @@ public class LogementsDatabase {
 		try{
 			statement = LoadDatabase.getConnexion().createStatement();
 			result = statement.executeQuery(query);
-			if(result.next()) {
-				logement = getLogementProperties(result, statement);
-			}
+			logement = getLogementProperties(result, statement);
 		} catch (SQLException e){
 		} finally {
 			LoadDatabase.closeConnexion(result, statement);
@@ -55,7 +53,7 @@ public class LogementsDatabase {
 		}
 	}
 	
-	public static List<LogementBean> getLogements(){
+	public List<LogementBean> getLogements(){
 	
 		//Init vars 
 		List<LogementBean> logements = new ArrayList<LogementBean>();
@@ -70,7 +68,6 @@ public class LogementsDatabase {
 			statement = LoadDatabase.getConnexion().createStatement();
 	    	result = statement.executeQuery(query);
 	    	while(result.next()) {	
-	    		System.out.println("Un logement !");
 	    		logements.add(getLogementProperties(result, statement));
 	    	}
 		
@@ -92,24 +89,20 @@ public class LogementsDatabase {
 		 * 	Cree un LogementBean et attribue les valeurs a ses proprietes
 		 ******************************************************************/
 
-		System.out.println("Get Logement Properties called !");
 		LogementBean logement = new LogementBean();
-			System.out.println("Result Next");
-			int logementId = 0;
-			logementId = result.getInt("housingId");
+		if (result.next()){
+			int logementId = result.getInt("housingId");
 			int userId = result.getInt("userId");
 	    	String address = result.getString("address");
 	    	String city = result.getString("city");
 	    	String description = result.getString("description");
 	    	int rate = result.getInt("rate");
 	    	int renterId = result.getInt("renterId");
-	    	
-	    	System.out.println("ID: " + logementId);
 			
 			logement.setidLogement(logementId);
 			logement.setAdresseLogement(address);
 	    	logement.setVilleLogement(city);
-	    	logement.setDescriptionLogement(description);
+	    	logement.setAdresseLogement(description);
 			logement.setRateLogement(rate);
 			logement.setIdRenter(renterId);
 			if (userId != 0) {
@@ -117,6 +110,9 @@ public class LogementsDatabase {
 				logement.setProprietaireLogement(proprietaire);
 			}
 		return logement;
+		} else {
+			return null;
+		}
 	}
 	
 	public static String deleteLogementById(int IdLogement, int userId) {
@@ -124,25 +120,27 @@ public class LogementsDatabase {
 		ResultSet result = null;
 		String res = null;
 		
-		LoadDatabase.loadDatabase();
-		String query = null;
-		if(userId == 1) {
-			query = "DELETE FROM housing where housingID=" + IdLogement + ";";
-			System.out.println("Delete from admin");
-		} else {
-			query = "DELETE FROM housing where housingID=" + IdLogement +  "AND user;";
-			System.out.println("Delete from user");
+		LogementBean logement = getLogementById(IdLogement);
+		int proprietaireId = logement.getProprietaireLogement().getUserId();
+		
+		if(userId == 1 || userId == proprietaireId) {
+			
+			LoadDatabase.loadDatabase();
+			String query = "DELETE FROM housing where housingID=" + IdLogement + ";";
+			
+			try{
+				statement = LoadDatabase.getConnexion().createStatement();
+				result = statement.executeQuery(query);
+			} catch (SQLException e){
+			} finally {
+				LoadDatabase.closeConnexion(result, statement);
+			}
+			
+			res = "Logement supprimé !";
 		}
 		
-		try{
-			statement = LoadDatabase.getConnexion().createStatement();
-			statement.executeUpdate(query);
-			res = "Test try";
-		} catch (SQLException e){
-			res= "Erreur !";
-		} finally {
-			res = "Logement supprimé !";
-			LoadDatabase.closeConnexion(result, statement);
+		else {
+			res = "Vous n'avez pas les droits pour supprimer ce logement !";
 		}
 		
 		return res;

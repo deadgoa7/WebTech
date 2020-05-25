@@ -22,15 +22,14 @@
 				<div class="row d-flex justify-content-center">
 					<c:if test="${!empty logements }">
 						<c:forEach var="logement" items="${logements}">
-							<c:if test="${!empty logement.idLogement}">
-								<a class=" wrap logement col-md-4 text-decoration-none" href="ViewLogement?id=<c:out value='${logement.idLogement}'/>">
-									<ul class="card mb-4 shadow-sm p-4 d-flex justify-content-center ml-3 mr-3">
-										<li><strong>Ville : </strong><c:out value="${logement.villeLogement}"></c:out></li>
-										<li><strong>Adresse : <br></strong><c:out value="${logement.adresseLogement}"></c:out></li>
-										<li><strong>Note : </strong><c:out value="${logement.rateLogement}"></c:out>/5</li>
-									</ul>
-								</a>
-							</c:if>
+							<a class=" wrap logement col-md-4 text-decoration-none" href="ViewLogement?id=<c:out value='${logement.idLogement}'/>">
+								<ul class="card mb-4 shadow-sm p-4 d-flex justify-content-center ml-3 mr-3">
+									<li><strong>Ville : </strong><c:out value="${logement.villeLogement}"></c:out></li>
+									<li><strong>Description : <br></strong><c:out value="${logement.adresseLogement}"></c:out></li>
+									<!-- <li><strong>Description : </strong><c:out value="${logement.descriptionLogement}"></c:out></li>  -->
+									<li><strong>Note : </strong><c:out value="${logement.rateLogement}"></c:out>/5</li>
+								</ul>
+							</a>
 						</c:forEach>
 					</c:if>
 				</div>
