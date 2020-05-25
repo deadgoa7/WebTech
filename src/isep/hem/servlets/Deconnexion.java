@@ -15,7 +15,7 @@ public class Deconnexion extends HttpServlet {
 		HttpSession session = req.getSession();
 		session.invalidate();
 		
-		resp.sendRedirect("/Accueil");
+		resp.sendRedirect("Accueil");
 	}
 
 	@Override
