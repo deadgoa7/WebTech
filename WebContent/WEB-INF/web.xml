@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    version="3.0">
+    
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
+        </jsp-property-group>
+    </jsp-config>
+    
+    
+    <servlet>
+    	<servlet-name>InscriptionServlet</servlet-name>
+    	<servlet-class>isep.hem.servlets.InscriptionServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+    	<servlet-name>InscriptionServlet</servlet-name>
+    	<url-pattern>/Inscription</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+    	<servlet-name>ConnexionServlet</servlet-name>
+    	<servlet-class>isep.hem.servlets.ConnexionServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+    	<servlet-name>ConnexionServlet</servlet-name>
+    	<url-pattern>/Connexion</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+    	<servlet-name>AccueilServlet</servlet-name>
+    	<servlet-class>isep.hem.servlets.AccueilServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+    	<servlet-name>AccueilServlet</servlet-name>
+    	<url-pattern>/Accueil</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+    	<servlet-name>AddHouse</servlet-name>
+    	<servlet-class>isep.hem.servlets.AddHouse</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+    	<servlet-name>AddHouse</servlet-name>
+    	<url-pattern>/AddHouse</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>ViewLogement</servlet-name>
+    	<servlet-class>isep.hem.servlets.ViewLogement</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+    	<servlet-name>ViewLogement</servlet-name>
+    	<url-pattern>/ViewLogement</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>Deconnexion</servlet-name>
+    	<servlet-class>isep.hem.servlets.Deconnexion</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+    	<servlet-name>Deconnexion</servlet-name>
+    	<url-pattern>/Deconnexion</url-pattern>
+    </servlet-mapping>
+    
+</web-app>

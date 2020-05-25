@@ -1,0 +1,28 @@
+h1{
+	font-family: Rajdhani;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 48px;
+	line-height: 61px;
+	color: linear-gradient(180deg, #26CBFF 0%, #31CDFF 0.01%, #3485FF 100%);
+}
+
+body{
+	width: 100%;
+	height: 100%;
+}
+
+#content{
+	padding-top: 5vh;
+	height: 95vh;
+	width: 100vw;
+}
+
+li {
+	list-style: none;
+	text-align: center;
+}
+
+a ul li : hover {
+	text-decoration: none;
+}
