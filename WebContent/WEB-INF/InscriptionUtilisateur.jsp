@@ -6,42 +6,52 @@
        	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         
     </head>
-    <body>
+    <body class="h-100">
     
-    	<%@ include file="header.jsp" %>
+        <%@ include file="header.jsp" %>
         
-        <c:if test="${ !empty sessionScope.prenom && !empty sessionScope.nom }">
-			<p>Bienvenue <c:out value="${ sessionScope.prenom }"/> <c:out value="${ sessionScope.nom }"></c:out>
-		</c:if>
-		
-       <c:if test="${ !empty form.res }"><p><c:out value="${ form.res }"></c:out></p></c:if>
+        <div class="bg-light" id="content" role="main">
+			<div class="container">
+				<div class="row d-flex justify-content-center">
         
-        <div>
-            <form method="POST" action="Inscription">
-                <fieldset>
-                    <legend>Informations client</legend>
-    
-                    <label for="nomClient">Nom <span class="requis">*</span></label>
-                    <input type="text" id="nomClient" name="nomClient" value="${ClientBean.nomClient}" size="20" maxlength="20" />
-                    <br />
+                    <c:if test="${ !empty sessionScope.prenom && !empty sessionScope.nom }">
+                        <p>Bienvenue <c:out value="${ sessionScope.prenom }"/> <c:out value="${ sessionScope.nom }"></c:out>
+                    </c:if>
                     
-                    <label for="prenomClient">Prénom </label>
-                    <input type="text" id="prenomClient" name="prenomClient" value="" size="20" maxlength="20" />
-                    <br />
+                    <c:if test="${ !empty form.res }">
+                        <h1 class="d-flex justify-content-center mb-5 w-100">
+                            <c:out value="${ form.res }"></c:out>
+                        </h1>
+                    </c:if>
                     
-                    <label for="emailClient">Adresse email</label>
-                    <input type="email" id="emailClient" name="emailClient" value="" size="20" maxlength="60" />
-                    <br />
+                    <div id="content" class="bg-light container-fluid main_container">
+                        <form method="POST" action="Inscription" class="w-75">
+                            <div class="form-group">
+                                <fieldset>
+                                    <legend>Informations client</legend>
                     
-                    <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" value=""/>
-                    <br />
-                    
-                </fieldset>
-                <input type="submit" value="Valider"  />
-                <input type="reset" value="Remettre à zéro" /> <br />
-            </form>
-        </div>
+                                    <label for="nomClient">Nom <span class="requis">*</span></label>
+                                    <input class="form-control" type="text" id="nomClient" name="nomClient" value="${ClientBean.nomClient}" size="20" maxlength="20" />
+                                    <br />
+                                    
+                                    <label for="prenomClient">Prï¿½nom </label>
+                                    <input class="form-control" type="text" id="prenomClient" name="prenomClient" value="" size="20" maxlength="20" />
+                                    <br />
+                                    
+                                    <label for="emailClient">Adresse email</label>
+                                    <input class="form-control" type="email" id="emailClient" name="emailClient" value="" size="20" maxlength="60" />
+                                    <br />
+                                    
+                                    <label for="password">Mot de passe</label>
+                                    <input class="form-control" type="password" id="password" name="password" value=""/>
+                                    <br />
+                                    
+                                </fieldset>
+                                <input type="submit" value="Valider"  />
+                                <input type="reset" value="Reset" /> <br />
+                            </div>
+                        </form>
+                    </div>
         
         
         
