@@ -24,11 +24,14 @@
 						<c:forEach var="logement" items="${logements}">
 							<c:if test="${!empty logement.idLogement}">
 								<a class=" wrap logement col-md-4 text-decoration-none" href="ViewLogement?id=<c:out value='${logement.idLogement}'/>">
-									<ul class="card mb-4 shadow-sm p-4 d-flex justify-content-center ml-3 mr-3">
-										<li><strong>Ville : </strong><c:out value="${logement.villeLogement}"></c:out></li>
-										<li><strong>Adresse : <br></strong><c:out value="${logement.adresseLogement}"></c:out></li>
-										<li><strong>Note : </strong><c:out value="${logement.rateLogement}"></c:out>/5</li>
-									</ul>
+									<div class="card logement-card mb-4 d-flex justify-content-center">
+										<img class="card-img-top" alt="HomePhoto" src="ressources/img/homeImage.jpeg">
+										<ul class="card-body">
+											<li><strong>Ville : </strong><c:out value="${logement.villeLogement}"></c:out></li>
+											<li><strong>Adresse : <br></strong><c:out value="${logement.adresseLogement}"></c:out></li>
+											<li><strong>Note : </strong><c:out value="${logement.rateLogement}"></c:out>/5</li>
+										</ul>
+									</div>
 								</a>
 							</c:if>
 						</c:forEach>
