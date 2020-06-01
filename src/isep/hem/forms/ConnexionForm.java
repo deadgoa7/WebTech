@@ -38,6 +38,7 @@ public class ConnexionForm {
 				System.out.println(user.getEmailClient());
 				HttpSession session = req.getSession();
 				session.setAttribute("CurrentUser",user);
+				session.setAttribute("email",email);
 				session.setAttribute("userId",user.getUserId());
 			} 
 			
