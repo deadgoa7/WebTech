@@ -1,21 +1,26 @@
-h1{
-	font-family: Rajdhani;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 48px;
-	line-height: 61px;
-	color: linear-gradient(180deg, #26CBFF 0%, #31CDFF 0.01%, #3485FF 100%);
-}
-
 body{
 	width: 100%;
 	height: 100%;
 }
 
-#content{
-	padding-top: 5vh;
-	height: 95vh;
-	width: 100vw;
+.center-content{
+	height: 100%;
+	width: 100%;
+	align-items: center;
+}
+
+#content{;
+	height: 100vh;
+	min-width: 500px;
+}
+
+nav{
+	z-index: 1024;
+}
+
+.logements{
+	position: relative;
+	top: 100px;
 }
 
 li {
@@ -36,12 +41,12 @@ a ul li:hover {
 	box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
-.toolbar-connected a svg{
-	opacity: 0.6;
-	transition: opacity 0.2s ease-in
+.toolbar-connected a img{
+	opacity: 0.8;
+	transition: opacity 0.2s ease-in-out
 }
 
-.toolbar-connected a svg:hover{
+.toolbar-connected a img:hover{
 	opacity: 1;
 }
 

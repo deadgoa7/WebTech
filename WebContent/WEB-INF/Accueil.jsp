@@ -18,8 +18,8 @@
 				<h1 class="d-flex justify-content-center mb-5 w-100">Bienvenue <c:out value="${sessionScope.prenom}"></c:out> !</h1>
 			</c:if>
 			
-			<div class="container">
-				<div class="row d-flex justify-content-center">
+			<div class="container h-100">
+				<div class="row h-75 d-flex justify-content-center logements">
 					<c:if test="${!empty logements }">
 						<c:forEach var="logement" items="${logements}">
 							<c:if test="${!empty logement.idLogement}">

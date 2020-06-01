@@ -193,4 +193,42 @@ public class LogementsDatabase {
 		}
 	}
 	
+	public static List<LogementBean> getMyHomes(int userId) {
+		List<LogementBean> logements = new ArrayList<LogementBean>();
+		Statement st = null;
+		ResultSet res = null;
+		
+		LoadDatabase.loadDatabase();
+		String query = "SELECT * FROM housing WHERE userID='" + userId + "';";
+		try {
+			st = LoadDatabase.getConnexion().createStatement();
+			res = st.executeQuery(query);
+			while(res.next()) {
+				logements.add(getLogementProperties(res, st));
+			}
+		} catch (SQLException e) {
+		} finally {
+			LoadDatabase.closeConnexion(res, st);
+		} return logements;
+	}
+	
+	public static List<LogementBean> getRentedHomes(int renterId) {
+		List<LogementBean> logements = new ArrayList<LogementBean>();
+		Statement st = null;
+		ResultSet res = null;
+		
+		LoadDatabase.loadDatabase();
+		String query = "SELECT * FROM housing WHERE RenterId='" + renterId + "';";
+		try {
+			st = LoadDatabase.getConnexion().createStatement();
+			res = st.executeQuery(query);
+			while(res.next()) {
+				logements.add(getLogementProperties(res, st));
+			}
+		} catch (SQLException e) {
+		} finally {
+			LoadDatabase.closeConnexion(res, st);
+		} return logements;
+	}
+	
 }

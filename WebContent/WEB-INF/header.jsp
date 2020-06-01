@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
 	<div class="d-flex justify-content-between align-items-center w-100">
 		<a class="navbar-brand" href="Accueil">Home Exchange Manager</a>
 		<c:if test="${empty sessionScope.CurrentUser}">
@@ -13,15 +13,15 @@
 		</c:if>
 		<c:if test="${!empty sessionScope.CurrentUser}">
 			<div class="toolbar-connected btn-toolbar d-flex align-items-center mr-3">
-				<a class="mx-3 settings" href="#">
-					<img alt="settings"src="ressources/svg/settings.svg"/>
+				<a class="mx-3 settings" href="UserView?id=<c:out value='${sessionScope.userId}'/>">
+					<img width=30px height=30px alt="settings"src="ressources/img/settings.png"/>
 				</a>
 				<a class="mx-3 chat" href="#">
-					<img alt="chat" src="ressources/svg/chat.svg"/>
+					<img width=30px height=30px alt="chat" src="ressources/img/chat.png"/>
 					
 				</a>
 				<a class="mx-3 logout" href="Deconnexion">
-					<img alt="logout" src="ressources/svg/logout.svg"/>
+					<img width=30px height=30px alt="logout" src="ressources/img/logout.png"/>
 				</a>
 			</div>
 		</c:if>

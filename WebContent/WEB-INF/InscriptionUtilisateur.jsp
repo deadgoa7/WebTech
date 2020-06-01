@@ -23,9 +23,9 @@
             </c:if>
             
             
-            <div class="container">
-				<div class="row d-flex justify-content-center">	
-                    <div class="bg-light container-fluid main_container d-flex justify-content-center w-100">
+            <div class="container h-100">
+				<div class="row d-flex justify-content-center center-content">	
+                    <div class="bg-light container-fluid main_container d-flex justify-content-center w-100 center-content">
                         <form method="POST" action="Inscription" class="w-75">
                             <div class="form-group">
                                 <fieldset>
@@ -53,7 +53,9 @@
                             </div>
                         </form>
                     </div>
-        
+				</div>
+			</div> 
+		</div>       
         
         
     	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>  

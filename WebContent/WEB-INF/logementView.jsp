@@ -19,8 +19,8 @@
 				<h1 class="d-flex justify-content-center mb-5 w-100">Bienvenue <c:out value="${sessionScope.prenom}"></c:out> !</h1>
 			</c:if>
 			
-			<div class="container">
-				<div class="row d-flex justify-content-center">
+			<div class="container h-100">
+				<div class="row d-flex justify-content-center center-content">
 					<c:if test="${!empty logement}">
 						<c:out value="${logement.villeLogement}"></c:out>
 						<c:out value="${logement.adresseLogement}"></c:out>
@@ -37,7 +37,7 @@
 							</form>
 						</c:if>
 						<c:if test="${empty sessionScope.CurrentUser}">
-							<p> Veuillez vous connecter pour réserver ce logement ! </p>
+							<h1> Veuillez vous connecter pour réserver ce logement ! </h1>
 						</c:if>
 					</c:if>
 					<c:if test="${!empty form.res}">

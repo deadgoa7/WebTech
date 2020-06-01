@@ -24,7 +24,7 @@
 						</h1>
 					</c:if>
 					
-					<div id="content" class="bg-light container-fluid main_container w-100 d-flex justify-content-center">
+					<div id="content" class="bg-light container-fluid main_container w-100 d-flex justify-content-center center-content">
 						<form method="POST" action="Connexion" class="w-75">
 							<div class="form-group">
 								<fieldset>
