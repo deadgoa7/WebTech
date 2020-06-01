@@ -1,0 +1,10 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width=50px height=50px viewBox="0 0 50 50">
+    <defs>
+        <style>.cls-1{fill:url(degrade);}</style>
+        <linearGradient id="degrade" x1="25" y1="50.03" x2="25" y2="4.99" gradientTransform="matrix(1, 0, 0, -1, 0, 52)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#ffd25f"/><stop offset="1" stop-color="#ff8c22"/>
+        </linearGradient>
+    </defs>
+    <title>Chat Icon</title>
+    <path class="cls-1" d="M37,17V13H13v4ZM29,29V25H13v4ZM13,19v4H37V19ZM41.06,5a3.57,3.57,0,0,1,2.72,1.22A3.57,3.57,0,0,1,45,8.94V33a3.87,3.87,0,0,1-1.22,2.82A3.57,3.57,0,0,1,41.06,37H13L5,45v-36A3.78,3.78,0,0,1,6,6.37,3.92,3.92,0,0,1,8.94,5Z"/>
+</svg>

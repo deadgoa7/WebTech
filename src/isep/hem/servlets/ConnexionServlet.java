@@ -28,8 +28,15 @@ public class ConnexionServlet extends HttpServlet {
 		
 		request.setAttribute("form", form);
 		
-		this.getServletContext().getRequestDispatcher("/WEB-INF/ConnexionUtilisateur.jsp").forward(request, response);
+		if(form.getRes().equals("Vous êtes connectés !")) {
+			response.sendRedirect("Accueil");
+		}
 		
+		else {
+		
+			System.out.println(form.getRes());
+			this.getServletContext().getRequestDispatcher("/WEB-INF/ConnexionUtilisateur.jsp").forward(request, response);
+		}
 		
 	}
 

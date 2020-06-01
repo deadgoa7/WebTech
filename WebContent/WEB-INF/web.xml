@@ -75,4 +75,14 @@
     	<url-pattern>/Deconnexion</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+    	<servlet-name>UserView</servlet-name>
+    	<servlet-class>isep.hem.servlets.UserView</servlet-class>
+    </servlet>
+    
+	<servlet-mapping>
+		<servlet-name>UserView</servlet-name>
+		<url-pattern>/UserView</url-pattern>
+	</servlet-mapping>
+    
 </web-app>

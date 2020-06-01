@@ -1,21 +1,26 @@
-h1{
-	font-family: Rajdhani;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 48px;
-	line-height: 61px;
-	color: linear-gradient(180deg, #26CBFF 0%, #31CDFF 0.01%, #3485FF 100%);
-}
-
 body{
 	width: 100%;
 	height: 100%;
 }
 
-#content{
-	padding-top: 5vh;
-	height: 95vh;
-	width: 100vw;
+.center-content{
+	height: 100%;
+	width: 100%;
+	align-items: center;
+}
+
+#content{;
+	height: 100vh;
+	min-width: 500px;
+}
+
+nav{
+	z-index: 1024;
+}
+
+.logements{
+	position: relative;
+	top: 100px;
 }
 
 li {
@@ -23,6 +28,35 @@ li {
 	text-align: center;
 }
 
-a ul li : hover {
+a ul li:hover {
 	text-decoration: none;
 }
+
+.logement-card{
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  	transition: box-shadow 0.3s ease-in-out;
+} 
+
+.logement-card:hover {
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.toolbar-connected a img{
+	opacity: 0.8;
+	transition: opacity 0.2s ease-in-out
+}
+
+.toolbar-connected a img:hover{
+	opacity: 1;
+}
+
+.bi-plus-circle-fill {
+	color: #ffc107;
+	opacity: 0.8;
+	transition: opacity 0.3s ease-in-out
+}
+
+.bi-plus-circle-fill:hover{
+	opacity: 1;
+}
+
