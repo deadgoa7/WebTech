@@ -116,6 +116,7 @@ public class UsersDatabase {
 		    String lastName = result.getString("lastName");
 		    String email = result.getString("email");
 		    String password = result.getString("password");
+		    String description = result.getString("infos");
 		    int rate = result.getInt("rate");
 		    boolean isAdmin = false;
 		    isAdmin = intToBool(result.getInt("isAdmin"));
@@ -128,6 +129,7 @@ public class UsersDatabase {
 	        utilisateur.setNoteClient(rate);
 	        utilisateur.setPasswordClient(password);
 	        utilisateur.setPrenomClient(firstName);
+	        utilisateur.setDescriptionClient(description);
 	        return utilisateur;
 		} else {
 			return null;

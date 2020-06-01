@@ -103,7 +103,7 @@ public class LogementsDatabase {
 			logement.setidLogement(logementId);
 			logement.setAdresseLogement(address);
 	    	logement.setVilleLogement(city);
-	    	logement.setAdresseLogement(description);
+	    	logement.setDescriptionLogement(description);
 			logement.setRateLogement(rate);
 			logement.setIdRenter(renterId);
 			if (userId != 0) {

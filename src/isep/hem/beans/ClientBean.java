@@ -9,10 +9,17 @@ public class ClientBean {
 	private String passwordClient;
 	private boolean isAdmin;
 	private float noteClient;
+	private String descriptionClient;
 	
 	// Get & Set
 	
 	
+	public String getDescriptionClient() {
+		return descriptionClient;
+	}
+	public void setDescriptionClient(String descriptionClient) {
+		this.descriptionClient = descriptionClient;
+	}
 	public String getNomClient() {
 		return nomClient;
 	}
