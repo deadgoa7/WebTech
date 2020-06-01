@@ -13,8 +13,8 @@
 		<%@ include file="header.jsp" %>
 	
 		<div class="bg-light" id="content" role="main">
-			<div class="container">
-				<div class="row d-flex justify-content-center">
+			<div class="container h-100">
+				<div class="row d-flex justify-content-center h-100">
 				
 					<c:if test="${ !empty form.res }">
 						<h1 class="d-flex justify-content-center mb-5 w-100">
@@ -22,7 +22,7 @@
 						</h1>
 					</c:if>
 					
-					<div id="content" class="bg-light container-fluid main_container w-100 d-flex justify-content-center center-content">
+					<div class="bg-light container-fluid main_container h-100 w-100 d-flex justify-content-center center-content">
 						<form method="POST" action="Connexion" class="w-75">
 							<div class="form-group">
 								<fieldset>
