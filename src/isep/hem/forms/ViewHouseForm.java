@@ -17,10 +17,14 @@ public class ViewHouseForm {
 		HttpSession session = req.getSession(false);
 		int userId = (int) session.getAttribute("userId");
 		
-		if(requete == "Delete") {
+		if(requete.equals("Delete")) {
 			setRes(LogementsDatabase.deleteLogementById(id, userId));
-		} else if (requete == "Book") {
+			System.out.println("Delete");
+		} else if (requete.equals("Book")) {
 			setRes(LogementsDatabase.bookLogement(id, userId));
+			System.out.println("Book");
+		} else {
+			System.out.println(requete);
 		}
 	}
 	

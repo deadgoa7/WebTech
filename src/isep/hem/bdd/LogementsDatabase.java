@@ -39,7 +39,7 @@ public class LogementsDatabase {
 
 	public static void addLogement(LogementBean logement, int userId){
 		LoadDatabase.loadDatabase();
-		String query = "INSERT INTO housing(userId,address,city,description,rate) VALUES(?,?,?,?,5)";
+		String query = "INSERT INTO housing(userId,address,city,description,rate,isAvailable) VALUES(?,?,?,?,5,1)";
 		try{
 		Connection conn = LoadDatabase.getConnexion();
 		PreparedStatement pStatement = conn.prepareStatement(query);
@@ -99,6 +99,7 @@ public class LogementsDatabase {
 	    	String description = result.getString("description");
 	    	int rate = result.getInt("rate");
 	    	int renterId = result.getInt("renterId");
+	    	int isAvailable = result.getInt("isAvailable");
 			
 			logement.setidLogement(logementId);
 			logement.setAdresseLogement(address);
@@ -106,6 +107,7 @@ public class LogementsDatabase {
 	    	logement.setDescriptionLogement(description);
 			logement.setRateLogement(rate);
 			logement.setIdRenter(renterId);
+			logement.setIsAvailable(isAvailable);
 			if (userId != 0) {
 				ClientBean proprietaire = UsersDatabase.getUserFromId(userId);
 				logement.setProprietaireLogement(proprietaire);
@@ -128,7 +130,7 @@ public class LogementsDatabase {
 			
 			try{
 				statement = LoadDatabase.getConnexion().createStatement();
-				result = statement.executeQuery(query);
+				statement.executeUpdate(query);
 			} catch (SQLException e){
 			} finally {
 				LoadDatabase.closeConnexion(result, statement);
@@ -148,8 +150,14 @@ public class LogementsDatabase {
 	public static String bookLogement(int IdLogement, int userId) {
 		Statement statement = null;
 		
+		System.out.println("Book logement");
+		
 		LogementBean logement = getLogementById(IdLogement);
-		if (logement.getIsAvailable() == 0) {
+		
+		int available  = logement.getIsAvailable();
+		System.out.println("Is logement available ?" + available);
+		
+		if (available == 0) {
 			return "Ce logement est déjà réservé !";
 		}
 		
@@ -171,7 +179,9 @@ public class LogementsDatabase {
 		Statement statement = null;
 		
 		LogementBean logement = getLogementById(IdLogement);
-		if (logement.getIsAvailable() == 0 && logement.getIdRenter() == userId) {
+		int available  = logement.getIsAvailable();
+		System.out.println("Is logement available ?" + available);
+		if (available == 0 && logement.getIdRenter() == userId) {
 			String res = null;
 			String query = "UPDATE housing SET isAvailable='1', renterId='0' where housingID='" + IdLogement + "';";
 			try {
