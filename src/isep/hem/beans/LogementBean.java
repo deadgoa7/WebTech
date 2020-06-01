@@ -9,6 +9,8 @@ public class LogementBean {
 	private String title;
 	private String villeLogement;
 	private String descriptionLogement;
+	private String services;
+	private String contraintes;
 	private int rateLogement;
 	private int isAvailable;
 	private ClientBean proprietaireLogement;
@@ -19,6 +21,25 @@ public class LogementBean {
 	
 	public int getIdRenter() {
 		return idRenter;
+	}
+
+	public String getServices() {
+		return services;
+	}
+
+
+	public void setServices(String services) {
+		this.services = services;
+	}
+
+
+	public String getContraintes() {
+		return contraintes;
+	}
+
+
+	public void setContraintes(String contraintes) {
+		this.contraintes = contraintes;
 	}
 
 

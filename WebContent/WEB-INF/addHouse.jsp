@@ -30,7 +30,7 @@
 								<fieldset>
 									<legend>Informations logement</legend>
 									
-									<label for="address">Titre de l'annonce</label>
+									<label for="titre">Titre de l'annonce</label>
 									<input class="form-control" type="text" id="title" name="title" value="" size="20" maxlength="255" />
 									<br /> 
 									
@@ -45,6 +45,14 @@
 									<label for="description">Description du logement</label>
 									<input class="form-control" type="text" id="description" name="description" value="" size="20" maxlength="255" />
 									<br /> 
+									
+									<label for="contraintes">Contraintes </label>
+									<input class="form-control" type="text" id="contraintes" name="contraintes" value="" size="20" maxlength="255" />
+									<br /> 
+									
+									<label for="services">Services </label>
+									<input class="form-control" type="text" id="services" name="services" value="" size="20" maxlength="255" />
+									<br />
 					
 								</fieldset>
 								<input type="submit" class="btn btn-primary" value="Valider" />
