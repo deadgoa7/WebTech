@@ -14,7 +14,9 @@
     		<c:if test="${!empty form.res}"><c:out value="${form.res}"></c:out></c:if>
     	
 	    	<c:if test="${empty sessionScope.CurrentUser}">
-	    		<p> Veuillez vous connecter pour ajouter une maison ! </p>
+	    		<div class="row h-75 d-flex justify-content-center center-content">
+	    			<h1> Veuillez vous connecter pour ajouter une maison ! </h1>
+	    		</div>
 	    	</c:if>
 	    	
 	    	<c:if test="${!empty CurrentUser.prenomClient }">

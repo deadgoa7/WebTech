@@ -24,17 +24,11 @@
 						</h1>
 					</c:if>
 					
-					<c:if test="${!empty sessionScope.CurrentUser}">
-						<h1 class="d-flex justify-content-center mb-5 w-100">
-							<c:out value="${ sessionScope.CurrentUser.prenomClient}"></c:out>
-						</h1>
-					</c:if>
-					
-					<div id="content" class="bg-light container-fluid main_container">
+					<div id="content" class="bg-light container-fluid main_container w-100 d-flex justify-content-center center-content">
 						<form method="POST" action="Connexion" class="w-75">
 							<div class="form-group">
 								<fieldset>
-									<legend>Informations client</legend>
+									<legend class="d-flex justify-content-center w-100">Informations client</legend>
 									
 									<label for="emailClient">Adresse email</label>
 									<input class="form-control" type="email" id="emailClient" name="emailClient" value="" size="20" maxlength="60" />
