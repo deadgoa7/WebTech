@@ -16,7 +16,7 @@
 				<a class="mx-3 settings" href="UserView?id=<c:out value='${sessionScope.userId}'/>">
 					<img width=30px height=30px alt="settings"src="ressources/img/settings.png"/>
 				</a>
-				<a class="mx-3 chat" href="#">
+				<a class="mx-3 chat" href="Messagerie.html">
 					<img width=30px height=30px alt="chat" src="ressources/img/chat.png"/>
 					
 				</a>
