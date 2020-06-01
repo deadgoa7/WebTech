@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Ma Messagerie</title>
+		<script type="text/javascript" src="ws.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="styleMessage.css">
+	</head>
+	
+	
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+			<div class="d-flex justify-content-between align-items-center w-100">
+				<a class="navbar-brand" href="Accueil">Home Exchange Manager</a>
+			</div>
+		</nav>
+	
+		<div id="container">
+			
+			<br/><br/>
+			<h1 class="display-1">Messagerie</h1>
+			<br/><br/>
+			<div class="row">
+        		<div class="col-xs-3">
+					<div class="inner-addon left-addon">
+					    <i class="glyphicon glyphicon-user"></i>
+					    <input type="text" class="form-control" id="dest" placeholder="Identifiant du destinataire"  />
+					</div>
+				</div>
+	        	<div class="col-xs-6">
+	            	<textarea id="messagesTextArea" readonly="readonly" rows="15" cols="100"></textarea><br/>
+	        	</div>
+    		</div>
+    		
+			<input id="messagetextField" type="text" size="90" />
+			
+			<button class="btn btn-default" id="send" type="button" onclick="send()" > Envoyer </button><br>
+		</div>
+		
+	</body>
+	
+</html>
