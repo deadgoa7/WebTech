@@ -6,6 +6,7 @@ public class LogementBean {
 	
 	private int idLogement;
 	private String adresseLogement;
+	private String title;
 	private String villeLogement;
 	private String descriptionLogement;
 	private int rateLogement;
@@ -18,6 +19,16 @@ public class LogementBean {
 	
 	public int getIdRenter() {
 		return idRenter;
+	}
+
+
+	public String getTitle() {
+		return title;
+	}
+
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 

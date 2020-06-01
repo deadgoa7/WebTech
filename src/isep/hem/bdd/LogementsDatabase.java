@@ -39,7 +39,7 @@ public class LogementsDatabase {
 
 	public static void addLogement(LogementBean logement, int userId){
 		LoadDatabase.loadDatabase();
-		String query = "INSERT INTO housing(userId,address,city,description,rate) VALUES(?,?,?,?,5)";
+		String query = "INSERT INTO housing(userId,address,city,description, title, rate) VALUES(?,?,?,?,?, 5)";
 		try{
 		Connection conn = LoadDatabase.getConnexion();
 		PreparedStatement pStatement = conn.prepareStatement(query);
@@ -47,6 +47,7 @@ public class LogementsDatabase {
 		pStatement.setString(2,logement.getAdresseLogement());
 		pStatement.setString(3,logement.getVilleLogement());
 		pStatement.setString(4,logement.getDescriptionLogement());
+		pStatement.setString(5,logement.getTitle());
 		pStatement.execute();
 		pStatement.close();
 		conn.close();
@@ -101,15 +102,16 @@ public class LogementsDatabase {
 	    	String address = result.getString("address");
 	    	String city = result.getString("city");
 	    	String description = result.getString("description");
+	    	String title = result.getString("title");
 	    	int rate = result.getInt("rate");
 	    	int renterId = result.getInt("renterId");
-	    	
 	    	System.out.println("ID: " + logementId);
 			
 			logement.setidLogement(logementId);
 			logement.setAdresseLogement(address);
 	    	logement.setVilleLogement(city);
 	    	logement.setDescriptionLogement(description);
+	    	logement.setTitle(title);
 			logement.setRateLogement(rate);
 			logement.setIdRenter(renterId);
 			if (userId != 0) {

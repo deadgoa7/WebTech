@@ -30,6 +30,10 @@
 								<fieldset>
 									<legend>Informations logement</legend>
 									
+									<label for="address">Titre de l'annonce</label>
+									<input class="form-control" type="text" id="title" name="title" value="" size="20" maxlength="255" />
+									<br /> 
+									
 									<label for="address">Adresse du logement</label>
 									<input class="form-control" type="text" id="address" name="address" value="" size="20" maxlength="255" />
 									<br /> 
