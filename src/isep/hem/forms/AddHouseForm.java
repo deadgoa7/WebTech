@@ -15,6 +15,9 @@ public class AddHouseForm {
 		String address = req.getParameter("address");
 		String city = req.getParameter("city");
 		String description = req.getParameter("description");
+		String contraintes = req.getParameter("contraintes");
+		String services = req.getParameter("services");
+		String title = req.getParameter("title");
 		int userId = 0;
 		try {
 			HttpSession session = req.getSession(false);
@@ -39,6 +42,9 @@ public class AddHouseForm {
 			logement.setVilleLogement(city);
 			logement.setClientFromId(userId);
 			logement.setDescriptionLogement(description);
+			logement.setServices(services);
+			logement.setContraintes(contraintes);
+			logement.setTitle(title);
 			setLogement(logement);
 			LogementsDatabase.addLogement(logement, userId);
 		}
