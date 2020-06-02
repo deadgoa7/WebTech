@@ -64,3 +64,23 @@ a ul li:hover {
 	opacity: 1;
 }
 
+.container-fluid {
+    min-height: 100%;
+    height: 100%;
+}
+
+.col-md-2 {
+	background-color : #957bbe;
+	border-radius:10px 10px;
+	color : white;
+	text-align : center;
+}
+
+.input-group{
+	margin-left:350px;
+}
+
+.btn-primary{
+	margin-left:50px
+}
+

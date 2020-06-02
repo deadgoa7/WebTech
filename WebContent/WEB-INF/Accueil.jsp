@@ -27,8 +27,8 @@
 									<div class="card logement-card mb-4 d-flex justify-content-center">
 										<img class="card-img-top" alt="HomePhoto" src="ressources/img/homeImage.jpeg">
 										<ul class="card-body">
+											<li><strong><c:out value="${logement.title}"></c:out></strong></li>
 											<li><strong>Ville : </strong><c:out value="${logement.villeLogement}"></c:out></li>
-											<li><strong>Adresse : <br></strong><c:out value="${logement.adresseLogement}"></c:out></li>
 											<li><strong>Note : </strong><c:out value="${logement.rateLogement}"></c:out>/5</li>
 										</ul>
 									</div>
